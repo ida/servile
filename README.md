@@ -15,8 +15,7 @@ What
 
 1. A JS-file of same name: If it returns a function, and executing the function
    upon the request-object returns a jsonifyable object, or a string, or a
-   jsonifyable string:
-   Answer with content-type JSON or HTML.
+   jsonifyable string: Answer with content-type JSON or HTML.
 
 2. A JSON-file of same name: Answer with content-type JSON.
 
