@@ -100,43 +100,52 @@ const onRequest = (request, response) => {
       return // abort further code-execution
     }
 
-    // Case 2: Filepath has not an extension and exists,
+    // Filepath has not an extension and exists,
     // and is a directory, append 'index' to filePath:
     while( fileExists(filePath) && fileIsDirectory(filePath) ) {
       filePath += 'index' // directory could contain directory named 'index'
     }
 
-    // Case 3: Filepath is extensionless, check if a JS-file of same name exists:
+    // Filepath is extensionless, check if a JS-file of same name exists:
     if(fileExists(filePath + '.js')) {
 
       // It does, load it:
       answer = loadModule(modulesPath + requestedPath)
 
-      // Case 4: A function was returned, execute it upon request:
+      // A function was returned, execute it upon request:
       if(typeof(answer) == 'function') answer = answer(request)
     
-      // Case 5: An object, was returned, try jsonifying it:
+      // Case 3: An object was returned, try jsonifying it and send it:
       try {
         answer = JSON.parse(answer)
         contentType = 'application/json'
-      }
-      catch(err) {
-        console.error('Got an object, but it is not jsonifyable.')
-      }
+        sendAnswer(response, answer, contentType)
+        return
+      } catch(err) {} // fail silently
 
-      // Case 6: A string was returned:
+      // Try stringifying return:
       try {
         answer = String(answer)
-      }
-      catch(err) {
-        console.error('Got something, but it is not stringifyable.')
+      } catch(err) {}
+
+      // Got a string:
+      if(typeof(answer) == 'string') {
+
+        // It's jsonifyable:
+        try {
+          answer = JSON.parse(answer)
+          contentType = 'application/json'
+        } catch(err) {}
+
+        // Case 4 and 5: Send HTML orJSON:
+        sendAnswer(response, answer, contentType)
+        return
+ 
       }
 
-      sendAnswer(response, answer, contentType)
-      return // abort further code-execution
     }
 
-    // Case 7: A JSON-file of same name exists, return JSON-object:
+    // Case 6: A JSON-file of same name exists, return JSON-object:
     if(fileExists(filePath + '.json')) {
       answer = readFile(filePath + '.json')
       contentType = 'application/json'
@@ -144,7 +153,7 @@ const onRequest = (request, response) => {
       return // abort further code-execution
     }
 
-    // Case 8: An HTML-file of same name exists, return it:
+    // Case 7: An HTML-file of same name exists, return it:
     if(fileExists(filePath + '.html')) {
       answer = readFile(filePath + '.html')
       sendAnswer(response, answer, contentType)
@@ -184,7 +193,7 @@ server.serve = () => {
 
     console.log(`
 Serving "${filesPath}" on "http://localhost:${port}"
-`)
+`    )
 
   })
 }
