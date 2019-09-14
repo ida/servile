@@ -1,8 +1,9 @@
 servile
 =======
 
-A quick-starter for writing NodeJS-based apps which automagically routes
-incoming requests to files of same name within the current folder.
+
+A quickstarter for NodeJS-based apps, automagically routing requests to files
+of same name within the current folder.
 
 
 What
