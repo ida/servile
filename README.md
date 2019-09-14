@@ -43,7 +43,7 @@ Why
 
 - Save time by not manually typing routing-logic.
 
-- Save time by not parsing posted data,
+- Save time by not parsing posted data.
 
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 
