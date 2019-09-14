@@ -70,7 +70,7 @@ const parseData = data => {
 
 const onRequest = (request, response) => {
 
-  let answer, extension, filePath, requestedPath, statusCode;
+  let answer, dynamicAnswer, extension, filePath, requestedPath, statusCode;
 
   let contentType = 'text/html'
 
@@ -100,24 +100,28 @@ const onRequest = (request, response) => {
       return // abort further code-execution
     }
 
-    // Filepath has not an extension and exists,
-    // and is a directory, append 'index' to filePath:
+    // Filepath has not an extension and exists and is a
+    // directory, append 'index' to filePath and regard
+    // directory could contain directory named 'index':
     while( fileExists(filePath) && fileIsDirectory(filePath) ) {
-      filePath += 'index' // directory could contain directory named 'index'
+      filePath += 'index'
+      answer = "This folder doesn't have an index-file." // fallback
     }
 
     // Filepath is extensionless, check if a JS-file of same name exists:
     if(fileExists(filePath + '.js')) {
 
       // It does, load it:
-      answer = loadModule(modulesPath + requestedPath)
+      dynamicAnswer = loadModule(modulesPath + requestedPath)
 
       // A function was returned, execute it upon request:
-      if(typeof(answer) == 'function') answer = answer(request)
+      if(typeof(dynamicAnswer) == 'function') {
+        dynamicAnswer = dynamicAnswer(request)
+      }
     
-      // Case 3: An object was returned, try jsonifying it and send it:
+      // Case 2: An object was returned, try jsonifying it and send it:
       try {
-        answer = JSON.parse(answer)
+        answer = JSON.parse(dynamicAnswer)
         contentType = 'application/json'
         sendAnswer(response, answer, contentType)
         return
@@ -125,44 +129,50 @@ const onRequest = (request, response) => {
 
       // Try stringifying return:
       try {
-        answer = String(answer)
+        dynamicAnswer = String(dynamicAnswer)
       } catch(err) {}
 
-      // Got a string:
-      if(typeof(answer) == 'string') {
+      // Case 3: Got a string:
+      if(typeof(dynamicAnswer) == 'string') {
 
-        // It's jsonifyable:
+        // Case 4: It's jsonifyable:
         try {
-          answer = JSON.parse(answer)
+          dynamicAnswer = JSON.parse(dynamicAnswer)
           contentType = 'application/json'
         } catch(err) {}
 
-        // Case 4 and 5: Send HTML orJSON:
-        sendAnswer(response, answer, contentType)
+        // Send HTML or JSON:
+        sendAnswer(response, dynamicAnswer, contentType)
         return
- 
+
       }
 
     }
 
-    // Case 6: A JSON-file of same name exists, return JSON-object:
+    // Case 5: A JSON-file of same name exists, return JSON-object:
     if(fileExists(filePath + '.json')) {
       answer = readFile(filePath + '.json')
       contentType = 'application/json'
       sendAnswer(response, answer, contentType)
-      return // abort further code-execution
+      return
     }
 
-    // Case 7: An HTML-file of same name exists, return it:
+    // Case 6: An HTML-file of same name exists, return it:
     if(fileExists(filePath + '.html')) {
       answer = readFile(filePath + '.html')
       sendAnswer(response, answer, contentType)
-      return // abort further code-execution
+      return
     }
 
-    // Worst case:
-    answer = 'Nothing found for ' + requestedPath
-    statusCode = 404
+    // Case 7: Ain't got no answer:
+    if( ! answer ) {
+      answer = 'Nothing found for ' + requestedPath
+      statusCode = 404
+      sendAnswer(response, answer, contentType, statusCode)
+      return
+    }
+
+    // Case 8: Fallback answer for directories:
     sendAnswer(response, answer, contentType, statusCode)
 
 	}); // request.on('end')
