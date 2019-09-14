@@ -68,13 +68,6 @@ const parseData = data => {
 }
 
 
-const getStaticAnswer = filePath => {
-
-  return [answer, contentType]
-
-}
-
-
 const onRequest = (request, response) => {
 
   let answer, extension, filePath, requestedPath, statusCode;
