@@ -14,7 +14,8 @@ What
 - A dynamic file server: Asking for 'example.org/about' will check for:
 
 1. A JS-file of same name: If it returns a function, and executing the function
-   upon the request-object returns a jsonifyable object, or a string:
+   upon the request-object returns a jsonifyable object, or a string, or a
+   jsonifyable string:
    Answer with content-type JSON or HTML.
 
 2. A JSON-file of same name: Answer with content-type JSON.
@@ -34,21 +35,23 @@ What
 - A reloader if "require-reload" is installed, meaning changes in dynamic
   scripts take immediate effect, no server-restart needed.
 
+- An independent package, because it has no dependencies.
+
 
 Why
 ===
 
 - Save time by not manually typing routing-logic.
 
-- Save time by not downloading a huge framework like e.g. "express" is.
-
-- Save time by not debugging dependencies.
-
 - Save time by not parsing posted data,
 
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 
 - Save time by not restarting the server to check script-modifications.
+
+- Save time by not debugging dependencies.
+
+- Save time by not downloading a huge framework like e.g. "express" is.
 
 
 How
