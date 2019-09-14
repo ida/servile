@@ -108,13 +108,9 @@ const onRequest = (request, response) => {
 
     // Case 3: Filepath is extensionless, check if a JS-file of same name exists:
     if(fileExists(filePath + '.js')) {
-      // It does, try to load it:
-      try {
-        answer = loadModule(modulesPath + requestedPath)
-      }
-      catch(err) {
-        console.error('JS-file of same name was found, but it is not loadable.')
-      }
+
+      // It does, load it:
+      answer = loadModule(modulesPath + requestedPath)
 
       // Case 4: A function was returned, execute it upon request:
       if(typeof(answer) == 'function') answer = answer(request)
