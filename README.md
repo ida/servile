@@ -76,7 +76,7 @@ Now you can drop files in the directory where you run node and they be served.
 Example
 =======
 
-For serving 'locahost:3000/register' your 'register.js'-file could be:
+For serving 'example.org/register' your 'register.js'-file could be:
 
     module.exports = req => {
 
@@ -89,6 +89,11 @@ For serving 'locahost:3000/register' your 'register.js'-file could be:
       return 'Some html'
 
     }
+
+
+In case you want to do some backend-logic in the backgorund and then send a
+static-file, simply remove the return-line and provide a 'register.json' or
+'register.html'-file.
 
 
 Futurama
