@@ -10,5 +10,10 @@
   "repository": {
     "url": "https://github.com/ida/servile"
   },
+  "keywords": [
+    "server",
+    "router",
+    "quickstart"
+  ],
   "license": "MIT"
 }
