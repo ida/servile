@@ -14,15 +14,15 @@ What
 
 - A dynamic file server: Asking for 'example.org/about' will check for:
 
-1. A JS-file of same name: If it returns a function, and executing the function
-   upon the request-object returns a jsonifyable object, or a string, or a
-   jsonifyable string: Answer with content-type JSON or HTML.
+1. A JS-file of same name: If it returns a function, execute the function
+   upon the request-object. If a string was returned send it as the answer
+   with content-type HTML, otherwise continue to next point.
 
 2. A JSON-file of same name: Answer with content-type JSON.
 
 3. An HTML-file of same name: Answer with content-type HTML.
 
-4. A directory of same name: Add '/index' to the requested path and procede
+4. A directory of same name: Add '/index' to the requested path and proceede
    from point 1.
 
 

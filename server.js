@@ -101,11 +101,12 @@ const onRequest = (request, response) => {
     }
 
     // Filepath has not an extension and exists and is a
-    // directory, append 'index' to filePath and regard
-    // directory could contain directory named 'index':
+    // directory: Append 'index' to filePath and regard
+    // directory could contain a directory named 'index':
     while( fileExists(filePath) && fileIsDirectory(filePath) ) {
       filePath += 'index'
-      answer = "This folder doesn't have an index-file." // fallback
+      // Provide a fallback-answer for directories:
+      answer = "This folder doesn't have an index-file."
     }
 
     // Filepath is extensionless, check if a JS-file of same name exists:
@@ -119,37 +120,15 @@ const onRequest = (request, response) => {
         dynamicAnswer = dynamicAnswer(request)
       }
     
-      // Case 2: An object was returned, try jsonifying it and send it:
-      try {
-        answer = JSON.parse(dynamicAnswer)
-        contentType = 'application/json'
-        sendAnswer(response, answer, contentType)
-        return
-      } catch(err) {} // fail silently
-
-      // Try stringifying return:
-      try {
-        dynamicAnswer = String(dynamicAnswer)
-      } catch(err) {}
-
-      // Case 3: Got a string:
+      // Case 2: An string was returned, send it:
       if(typeof(dynamicAnswer) == 'string') {
-
-        // Case 4: It's jsonifyable:
-        try {
-          dynamicAnswer = JSON.parse(dynamicAnswer)
-          contentType = 'application/json'
-        } catch(err) {}
-
-        // Send HTML or JSON:
         sendAnswer(response, dynamicAnswer, contentType)
         return
-
       }
 
     }
 
-    // Case 5: A JSON-file of same name exists, return JSON-object:
+    // Case 3: A JSON-file of same name exists, return JSON-object:
     if(fileExists(filePath + '.json')) {
       answer = readFile(filePath + '.json')
       contentType = 'application/json'
@@ -157,14 +136,14 @@ const onRequest = (request, response) => {
       return
     }
 
-    // Case 6: An HTML-file of same name exists, return it:
+    // Case 4: An HTML-file of same name exists, return it:
     if(fileExists(filePath + '.html')) {
       answer = readFile(filePath + '.html')
       sendAnswer(response, answer, contentType)
       return
     }
 
-    // Case 7: Ain't got no answer:
+    // Case 5: Ain't got no answer:
     if( ! answer ) {
       answer = 'Nothing found for ' + requestedPath
       statusCode = 404
@@ -172,7 +151,7 @@ const onRequest = (request, response) => {
       return
     }
 
-    // Case 8: Fallback answer for directories:
+    // Case 6: Fallback answer for directories:
     sendAnswer(response, answer, contentType, statusCode)
 
 	}); // request.on('end')
