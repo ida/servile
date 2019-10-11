@@ -1,6 +1,11 @@
 # servile changelog
 
 
+## 1.0.2 (2019-10-11)
+
+* Allow waiting for promise-fullfillment in dynamic answers.
+
+
 ## 1.0.1 (2019-09-16)
 
 * Reduce unnecessary complexity: For dynamic answers only

@@ -79,7 +79,7 @@ const onRequest = (request, response) => {
   let data = []; request.on('data', chunk => data.push(chunk))
 
   // When the request has finished, all data is sended and we can ...
-  request.on('end', () => {
+  request.on('end', async () => {
 
     // ... make all received data-chunks an object of key-value-pairs
     // and attach it to the request, for possible further processing
@@ -117,7 +117,7 @@ const onRequest = (request, response) => {
 
       // A function was returned, execute it upon request:
       if(typeof(dynamicAnswer) == 'function') {
-        dynamicAnswer = dynamicAnswer(request)
+        dynamicAnswer = await dynamicAnswer(request)
       }
     
       // Case 2: An string was returned, send it:
