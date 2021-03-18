@@ -1,6 +1,11 @@
 # servile changelog
 
 
+## 1.0.3 (2021-03-18)
+
+* Fix index-files not found on glitch.com. See #1.
+
+
 ## 1.0.2 (2019-10-11)
 
 * Allow waiting for promise-fullfillment in dynamic answers.
