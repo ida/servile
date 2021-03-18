@@ -20,8 +20,6 @@ let RELOAD = true
 
 // GLOBALS:
 
-const modulesPath = './' + path.relative(__dirname, filesPath)
-
 let loadModule = require
 
 if(RELOAD) {
@@ -113,7 +111,7 @@ const onRequest = (request, response) => {
     if(fileExists(filePath + '.js')) {
 
       // It does, load it:
-      dynamicAnswer = loadModule(modulesPath + requestedPath)
+      dynamicAnswer = loadModule(filePath)
 
       // A function was returned, execute it upon request:
       if(typeof(dynamicAnswer) == 'function') {
