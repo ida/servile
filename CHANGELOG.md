@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.0.4 (2021-03-18)
+
+* Fix posted values which contain spaces get replaced with plus signs.
+
 ## 1.0.3 (2021-03-18)
 
 * Fix index-files not found on glitch.com. See #1.
