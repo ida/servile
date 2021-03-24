@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.0.5 (2021-03-24)
+
+* Enable passing options to serve().
+
 ## 1.0.4 (2021-03-18)
 
 * Fix posted values which contain spaces get replaced with plus signs.

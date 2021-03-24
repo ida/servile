@@ -1,10 +1,10 @@
 {
   "name": "servile",
   "version": "1.0.5",
-  "description": "A quickstarter for NodeJS-based apps, automagically routing requests to files of same name within the current folder.",
-  "main": "main.js",
+  "description": "A quickstarter for NodeJS-based apps, automagically routing requests to files of same name within a given folder.",
+  "main": "lib/main.js",
   "scripts": {
-    "start": "node serve.js"
+    "start": "node lib/serve.js"
   },
   "author": "Ida Ebkes",
   "repository": {

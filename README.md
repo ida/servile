@@ -3,7 +3,7 @@ servile
 
 
 A quickstarter for NodeJS-based apps, automagically routing requests to files
-of same name within the current folder.
+of same name within a given folder.
 
 
 What
@@ -18,9 +18,9 @@ What
    upon the request-object. If a string was returned send it as the answer
    with content-type HTML, otherwise continue to next point.
 
-2. A JSON-file of same name: Answer with content-type JSON.
+2. An HTML-file of same name: Answer with content-type HTML.
 
-3. An HTML-file of same name: Answer with content-type HTML.
+3. A JSON-file of same name: Answer with content-type JSON.
 
 4. A directory of same name: Add '/index' to the requested path and proceede
    from point 1.
@@ -73,6 +73,18 @@ The console should then show something like:
 Now you can drop files in the directory where you run node and they be served.
 
 
+Options
+-------
+
+You can specify all or some, or one of the following options:
+
+    require('servile').serve({
+      filesPath: 'public',
+      port: 2727,
+      RELOAD: false
+    })
+
+
 Example
 =======
 
@@ -91,17 +103,15 @@ For serving 'example.org/register' your 'register.js'-file could be:
     }
 
 
-In case you want to do some backend-logic in the backgorund and then send a
-static-file, simply remove the return-line and provide a 'register.json' or
-'register.html'-file.
+In case you want to do some backend-logic in the background and then send a
+static-file, simply remove the return-line and provide a 'register.html' or
+'register.json'-file.
 
 
 Futurama
 ========
 
 Not yet implemented, but nice to have:
-
-- Allow passing custom-port.
 
 - Allow custom not-found- and is-directory-handlers.
 
