@@ -3,6 +3,12 @@
 
 ## 1.0.5 (2021-03-24)
 
+* Fix unintended overwrite of default options.
+
+* Enable passing functions for indexless directories and url not found.
+
+## 1.0.5 (2021-03-24)
+
 * Enable passing options to serve().
 
 ## 1.0.4 (2021-03-18)
