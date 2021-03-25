@@ -16,7 +16,8 @@ What
 
 1. A JS-file of same name: If it returns a function, execute the function
    upon the request-object. If a string was returned send it as the answer
-   with content-type HTML, otherwise continue to next point.
+   with content-type HTML, if an object was returned send it as the answer
+   with content-type JSON, otherwise continue to next point.
 
 2. An HTML-file of same name: Answer with content-type HTML.
 
