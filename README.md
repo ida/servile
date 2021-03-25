@@ -64,7 +64,7 @@ to your main-script:
 
 Or run servile's serve-script directly of the commandline:
 
-    node node_modules/servile/serve.js
+    node node_modules/servile/lib/serve.js
 
 The console should then show something like:
 
@@ -81,7 +81,9 @@ You can specify all or some, or one of the following options:
     require('servile').serve({
       filesPath: 'public',
       port: 2727,
-      RELOAD: false
+      RELOAD: false,
+      answerNotFound:  req => { return `Nothing found for ${req.url}` },
+      answerDirectory: req => { return "No index-file in this folder." }
     })
 
 
@@ -106,16 +108,6 @@ For serving 'example.org/register' your 'register.js'-file could be:
 In case you want to do some backend-logic in the background and then send a
 static-file, simply remove the return-line and provide a 'register.html' or
 'register.json'-file.
-
-
-Futurama
-========
-
-Not yet implemented, but nice to have:
-
-- Allow custom not-found- and is-directory-handlers.
-
-- Allow setting up several servers.
 
 
 Author
