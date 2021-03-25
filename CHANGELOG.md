@@ -1,7 +1,11 @@
 # servile changelog
 
 
-## 1.0.5 (2021-03-24)
+## 1.0.7 (2021-03-25)
+
+* Correct path for main-script.
+
+## 1.0.6 (2021-03-25)
 
 * Fix unintended overwrite of default options.
 
