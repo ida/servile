@@ -15,5 +15,8 @@
     "router",
     "quickstart"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "is-directory": "^0.3.1"
+  }
 }

@@ -36,11 +36,11 @@ What
 - A reloader if "require-reload" is installed, meaning changes in dynamic
   scripts take immediate effect, no server-restart needed.
 
-- An independent package, because it has no dependencies.
-
 
 Why
 ===
+
+- Save time by not downloading a huge framework like e.g. "express" is.
 
 - Save time by not manually typing routing-logic.
 
@@ -49,10 +49,6 @@ Why
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 
 - Save time by not restarting the server to check script-modifications.
-
-- Save time by not debugging dependencies.
-
-- Save time by not downloading a huge framework like e.g. "express" is.
 
 
 How
