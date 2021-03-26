@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.1 ()
+
+* Use package "is-directory".
+
 ## 1.0.9 (2021-03-26)
 
 * Fix string gets served as JSON, better be HTML.
