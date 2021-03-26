@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.0.8 (2021-03-26)
+
+* Enable a script returns an object and serve it as JSON.
+
 ## 1.0.7 (2021-03-25)
 
 * Correct path for main-script.
