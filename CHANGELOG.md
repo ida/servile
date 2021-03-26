@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.0.9 (2021-03-26)
+
+* Fix string gets served as JSON, better be HTML.
+
 ## 1.0.8 (2021-03-26)
 
 * Enable a script returns an object and serve it as JSON.
