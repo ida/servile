@@ -13,10 +13,10 @@
   "keywords": [
     "server",
     "router",
-    "quickstart"
+    "quickstart",
+    "lightweight",
+    "independent",
+    "dependency-less"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "is-directory": "^0.3.1"
-  }
+  "license": "MIT"
 }
