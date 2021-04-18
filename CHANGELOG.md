@@ -1,8 +1,9 @@
 # servile changelog
 
 
-## 1.1.2 ()
+## 1.1.2 (2021-04-18)
 
+* Correct using Python-comment instead of JS-comment.
 
 ## 1.1.1 (2021-04-18)
 
