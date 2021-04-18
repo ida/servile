@@ -1,7 +1,10 @@
 # servile changelog
 
 
-## 1.1 (2021-04-18)
+## 1.1.2 ()
+
+
+## 1.1.1 (2021-04-18)
 
 * Protect Chrome-users from being tracked, a.k.a. FLoC off Google.
 
