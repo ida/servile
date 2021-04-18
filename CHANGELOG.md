@@ -3,6 +3,7 @@
 
 ## 1.1 ()
 
+* Protect Chrome-users from being tracked, a.k.a. FLoC off Google.
 
 ## 1.0.9 (2021-03-26)
 
