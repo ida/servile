@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.1.3 (2021-05-11)
+
+* Fix isDirectory.
+
 ## 1.1.2 (2021-04-18)
 
 * Correct using Python-comment instead of JS-comment.
