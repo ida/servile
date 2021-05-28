@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.1.4 (2021-05-28)
+
+* Support server-side-events.
+
 ## 1.1.3 (2021-05-11)
 
 * Fix isDirectory.

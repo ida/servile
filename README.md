@@ -15,9 +15,9 @@ What
 - A dynamic file server: Asking for 'example.org/about' will check for:
 
 1. A JS-file of same name: If it returns a function, execute the function
-   upon the request-object. If a string was returned send it as the answer
-   with content-type HTML, if an object was returned send it as the answer
-   with content-type JSON, otherwise continue to next point.
+   upon the request- and response-object. If a string was returned send it
+   as the answer with content-type HTML, if an object was returned send it
+   as the answer with content-type JSON, otherwise continue to next point.
 
 2. An HTML-file of same name: Answer with content-type HTML.
 
@@ -89,11 +89,11 @@ Example
 
 For serving 'example.org/register' your 'register.js'-file could be:
 
-    module.exports = req => {
+    module.exports = (request, response) => {
 
-      if(req.method == 'POST') {
+      if(request.data) {
 
-        // Do something with req.data
+        // do something with request.data
 
       }
 
@@ -105,6 +105,22 @@ For serving 'example.org/register' your 'register.js'-file could be:
 In case you want to do some backend-logic in the background and then send a
 static-file, simply remove the return-line and provide a 'register.html' or
 'register.json'-file.
+
+
+Server side events (SSE) are supported, e.g. for serving 'example.org/stream'
+your 'stream.sse'-file should have at least this content:
+
+	module.exports = (req, res) => {
+
+	  res.writeHead(200, {
+		'Content-Type': 'text/event-stream',
+		'Cache-Control': 'no-cache',
+		'Connection': 'keep-alive'
+	  });
+
+	  res.write('data: Hi client!\n\n')
+
+	}
 
 
 Author
