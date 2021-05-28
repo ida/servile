@@ -36,6 +36,8 @@ What
 - A reloader if "require-reload" is installed, meaning changes in dynamic
   scripts take immediate effect, no server-restart needed.
 
+- A supporter for server-side-events.
+
 
 Why
 ===
@@ -49,6 +51,8 @@ Why
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 
 - Save time by not restarting the server to check script-modifications.
+
+- Because it's 2021.
 
 
 How
