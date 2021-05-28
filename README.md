@@ -10,7 +10,7 @@ What
 ====
 
 - A static file server: Asking for 'example.org/picture.png', returns
-  'picture.png', if present in the directory where node is executed.
+  'picture.png', if present in a given directory.
 
 - A dynamic file server: Asking for 'example.org/about' will check for:
 
@@ -63,7 +63,7 @@ to your main-script:
 
     require('servile').serve()
 
-Or run servile's serve-script directly of the commandline:
+Or run the serve-script directly of the commandline:
 
     node node_modules/servile/lib/serve.js
 
