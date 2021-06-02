@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.1.5 (2021-06-02)
+
+* Improve server-side-events: Allow exporting funcs.
+
 ## 1.1.4 (2021-05-28)
 
 * Support server-side-events.

@@ -23,7 +23,7 @@ What
 
 3. A JSON-file of same name: Answer with content-type JSON.
 
-4. A directory of same name: Add '/index' to the requested path and proceede
+4. A directory of same name: Add '/index' to the requested path and proceed
    from point 1.
 
 
@@ -112,18 +112,42 @@ static-file, simply remove the return-line and provide a 'register.html' or
 
 
 Server side events (SSE) are supported, e.g. for serving 'example.org/stream'
-your 'stream.sse'-file should have at least this content:
+your 'stream.sse'-file is expected to export a main-function and could be like:
 
-	module.exports = (req, res) => {
+	let clientId = 0
+	let clients = {}
 
-	  res.writeHead(200, {
-		'Content-Type': 'text/event-stream',
-		'Cache-Control': 'no-cache',
-		'Connection': 'keep-alive'
-	  });
+	function sendToClient(client, data) {
+	  client.write('id: ' + (new Date()).toLocaleTimeString() + '\n')
+	  client.write('data: ' + data + '\n\n')
+	}
 
-	  res.write('data: Hi client!\n\n')
+	function sendToClients(data) {
+	  for(clientId in clients) {
+		sendToClient(clients[clientId], data)
+	  }
+	}
 
+	function main(req, res) {
+
+      (function (clientId) {
+        clients[clientId] = res       // collect new client
+        req.on('close', function () { // client disconnected
+          delete clients[clientId]    // remove client
+        })
+      })(++clientId)
+
+	  sendToClient(res, 'Welcome client, you are connected!')
+
+	  sendToClients('We got a new member joining!')
+
+	}
+
+
+	module.exports = {
+	  main: main,
+	  sendToClient: sendToClient,
+	  sendToClients: sendToClients
 	}
 
 
@@ -147,4 +171,3 @@ For bug-reports or any message you want to transmit, please open an issue on:
 https://github.com/ida/servile/issues
 
 Contributions are very welcome, if you're a beginner don't hesitate to ping.
-
