@@ -9,6 +9,8 @@ of same name within a given folder.
 What
 ====
 
+- An independent package, meaning it has no dependencies.
+
 - A static file server: Asking for 'example.org/picture.png', returns
   'picture.png', if present in a given directory.
 
@@ -33,14 +35,13 @@ What
 - An unsecure allower of loading external resouces from other servers,
   by setting a CORS-header.
 
-- A reloader if "require-reload" is installed, meaning changes in dynamic
-  scripts take immediate effect, no server-restart needed.
-
 - A supporter for server-side-events.
 
 
 Why
 ===
+
+- Save time by not downloading and/or debugging dependencies.
 
 - Save time by not downloading a huge framework like e.g. "express" is.
 
@@ -53,6 +54,9 @@ Why
 - Save time by not restarting the server to check script-modifications.
 
 - Because it's 2021.
+
+If you want to save even more time during development, check out the packages
+'nodemon' and 'browser-sync'.
 
 
 How
@@ -82,7 +86,6 @@ You can specify all or some, or one of the following options:
     require('servile').serve({
       filesPath: 'public',
       port: 2727,
-      RELOAD: false,
       answerNotFound:  req => { return `Nothing found for ${req.url}` },
       answerDirectory: req => { return "No index-file in this folder." }
     })

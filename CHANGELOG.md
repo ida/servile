@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.1.6 (2021-06-02)
+
+* Remove RELOAD-option, add note about using nodemon instead.
+
 ## 1.1.5 (2021-06-02)
 
 * Improve server-side-events: Allow exporting funcs.
