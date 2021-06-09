@@ -1,9 +1,9 @@
 # servile changelog
 
 
-## 1.1.7 (2021-06-02)
+## 1.1.7 (2021-06-09)
 
-* connect to parent repo
+* Pass response also to default-views indexless-dir and not-found.
 
 ## 1.1.6 (2021-06-02)
 
