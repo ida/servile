@@ -1,6 +1,10 @@
 # servile changelog
 
 
+## 1.1.8 (2021-06-14)
+
+* Do not close request for server-side-events.
+
 ## 1.1.7 (2021-06-09)
 
 * Pass response also to default-views indexless-dir and not-found.
