@@ -18,5 +18,8 @@
     "independent",
     "dependency-less"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
 }

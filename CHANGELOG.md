@@ -3,6 +3,7 @@
 
 ## 1.1.9 (unreleased)
 
+* Add package "node-static" for serving static files.
 
 ## 1.1.8 (2021-06-14)
 
