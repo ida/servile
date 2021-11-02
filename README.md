@@ -9,8 +9,6 @@ of same name within a given folder.
 What
 ====
 
-- An independent package, meaning it has no dependencies.
-
 - A static file server: Asking for 'example.org/picture.png', returns
   'picture.png', if present in a given directory.
 
@@ -40,8 +38,6 @@ What
 
 Why
 ===
-
-- Save time by not downloading and/or debugging dependencies.
 
 - Save time by not downloading a huge framework like e.g. "express" is.
 
