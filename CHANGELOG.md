@@ -1,7 +1,7 @@
 # servile changelog
 
 
-## 1.1.9 (unreleased)
+## 1.1.9 (2021-11-02)
 
 * Add package "node-static" for serving static files.
 
