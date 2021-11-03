@@ -1,6 +1,12 @@
 # servile changelog
 
 
+## 1.2.0 (2021-11-03)
+
+* Redirect post-requests, so on a browser-reload forms do not
+  accidentally get submitted again, and the browser doesn't
+  prompt a warning (PRG-pattern).
+
 ## 1.1.9 (2021-11-02)
 
 * Add package "node-static" for serving static files.
