@@ -5,6 +5,8 @@
 
 *
 
+* Add style for default answer for 404 "not found".
+
 ## 1.2.0 (2021-11-03)
 
 * Redirect post-requests, so on a browser-reload forms do not
