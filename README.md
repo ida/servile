@@ -150,6 +150,15 @@ your 'stream.sse'-file is expected to export a main-function and could be like:
 	}
 
 
+
+You can use the exported methods in other scripts like this:
+
+    const { sendToClient, sendToClients } = require('./path/to/events.sse')
+
+Note that the file-extension '.sse' needs to be written, too.
+
+
+
 Author
 ======
 
