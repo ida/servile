@@ -158,6 +158,19 @@ You can use the exported methods in other scripts like this:
 Note that the file-extension '.sse' needs to be written, too.
 
 
+You can then handle the message on the client side in a frontend-script:
+
+
+	var source = new EventSource('/stream') // name of sse-file
+
+	source.onmessage = function(eve) {
+
+	  console.log(eve)
+
+	}
+
+
+
 
 Author
 ======
