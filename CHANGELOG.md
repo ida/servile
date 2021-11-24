@@ -5,6 +5,8 @@
 
 *
 
+* Fix markdown-files load forever: Changed mimetype.
+
 * Add style for default answer for 404 "not found".
 
 ## 1.2.0 (2021-11-03)
