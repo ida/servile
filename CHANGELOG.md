@@ -1,7 +1,7 @@
 # servile changelog
 
 
-## 1.2.1 (unreleased)
+## 1.2.1 (2022-02-01)
 
 * Fix #5 remove interest-cohort of response-header, errors in chrome.
 
