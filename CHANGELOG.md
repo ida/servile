@@ -3,6 +3,8 @@
 
 ## 1.2.1 (unreleased)
 
+* Fix #5 remove interest-cohort of response-header, errors in chrome.
+
 * Fix #4 html/json-file not found.
 
 * Fix markdown-files load forever: Changed mimetype.
