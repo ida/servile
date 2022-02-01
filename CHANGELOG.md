@@ -3,7 +3,7 @@
 
 ## 1.2.1 (unreleased)
 
-*
+* Fix #4 html/json-file not found.
 
 * Fix markdown-files load forever: Changed mimetype.
 
