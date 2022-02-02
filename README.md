@@ -49,7 +49,7 @@ Why
 
 - Save time by not restarting the server to check script-modifications.
 
-- Because it's 2021.
+- Because it was 2021.
 
 If you want to save even more time during development, check out the packages
 'nodemon' and 'browser-sync'.
@@ -77,7 +77,7 @@ Now you can drop files in the directory where you run node and they be served.
 Options
 -------
 
-You can specify all or some, or one of the following options:
+You can specify all, or some, or one of the following options:
 
     require('servile').serve({
       filesPath: 'public',
@@ -106,7 +106,7 @@ For serving 'example.org/register' your 'register.js'-file could be:
 
 
 In case you want to do some backend-logic in the background and then send a
-static-file, simply remove the return-line and provide a 'register.html' or
+static-file, simply return null and provide a 'register.html' or
 'register.json'-file.
 
 

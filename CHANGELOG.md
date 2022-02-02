@@ -3,7 +3,9 @@
 
 ## 1.2.2 (unreleased)
 
-*
+* Fix #6: If a dynamic file wants to return nothing, require
+  it to be null, otherwise a warning-message is printed in
+  the console.
 
 ## 1.2.1 (2022-02-01)
 
