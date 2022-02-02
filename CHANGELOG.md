@@ -3,6 +3,8 @@
 
 ## 1.2.2 (unreleased)
 
+* Turn off caching for static-files.
+
 * Fix #6: If a dynamic file wants to return nothing, require
   it to be null, otherwise a warning-message is printed in
   the console.
