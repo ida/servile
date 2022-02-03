@@ -3,6 +3,8 @@
 
 ## 1.2.2 (unreleased)
 
+* Display errors in webpage.
+
 * Turn off caching for static-files.
 
 
