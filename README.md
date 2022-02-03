@@ -3,7 +3,8 @@ servile
 
 
 A quickstarter for NodeJS-based apps, automagically routing requests to files
-of same name within a given folder.
+of same name within a given folder. Targeted at prototypers, not made for
+production.
 
 
 What
@@ -30,10 +31,11 @@ What
 - A parser for posted data: If a user fills out an HTML-form, the data is
   parsed to an object, e.g.: '{ "someFieldName": "someValue" }'.
 
-- An unsecure allower of loading external resouces from other servers,
-  by setting a CORS-header.
+- A CORS-header-setter, so you can load and fetch like it's 1982.
 
-- A supporter for server-side-events.
+- A redirecter after form-submission, following the PRG-pattern.
+
+- A supporter for server-side-events (SSE).
 
 
 Why
@@ -47,7 +49,7 @@ Why
 
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 
-- Save time by not restarting the server to check script-modifications.
+- Save time by not getting a warning message when reloading a page.
 
 - Because it was 2021.
 

@@ -1,7 +1,7 @@
 {
   "name": "servile",
   "version": "1.2.2",
-  "description": "A quickstarter for NodeJS-based apps, automagically routing requests to files of same name within a given folder.",
+  "description": "A quickstarter for NodeJS-based apps, automagically routing requests to files of same name within a given folder. Targeted at prototypers, not made for production.",
   "main": "main.js",
   "scripts": {
     "start": "node lib/serve.js"
@@ -15,8 +15,7 @@
     "router",
     "quickstart",
     "lightweight",
-    "independent",
-    "dependency-less"
+    "prototyping"
   ],
   "license": "MIT",
   "dependencies": {
