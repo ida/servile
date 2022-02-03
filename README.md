@@ -106,8 +106,8 @@ For serving 'example.org/register' your 'register.js'-file could be:
 
 
 In case you want to do some backend-logic in the background and then send a
-static-file, simply return null and provide a 'register.html' or
-'register.json'-file.
+static-file, simply remove the return-line and provide a 'register.html' or
+a 'register.json'-file.
 
 
 Server side events (SSE) are supported, e.g. for serving 'example.org/stream'
