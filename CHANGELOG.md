@@ -3,7 +3,8 @@
 
 ## 1.2.3 (unreleased)
 
-*
+* Fix index-file not found. 'index' needed to be added to
+  request.url too, not only to filePath.
 
 
 ## 1.2.2 (2022-02-03)
