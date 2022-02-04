@@ -1,7 +1,7 @@
 # servile changelog
 
 
-## 1.2.3 (unreleased)
+## 1.2.3 (2022-02-04)
 
 * Fix index-file not found. 'index' needed to be added to
   request.url too, not only to filePath.
