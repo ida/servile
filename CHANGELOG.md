@@ -1,9 +1,9 @@
 # servile changelog
 
 
-## 1.2.4 (unreleased4)
+## 1.2.4 (unreleased)
 
-*
+* Add bin-script, so servile can be executed of the commandline.
 
 
 ## 1.2.3 (2022-02-04)

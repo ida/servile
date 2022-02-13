@@ -51,7 +51,7 @@ Why
 
 - Save time by not getting a warning message when reloading a page.
 
-- Because it was 2021.
+- Save time by not setting up a websocket-server for talking to the client.
 
 If you want to save even more time during development, check out the packages
 'nodemon' and 'browser-sync'.
@@ -60,20 +60,22 @@ If you want to save even more time during development, check out the packages
 How
 ===
 
-After installing this package with `npm install servile`, either add this line
-to your main-script:
+After installing this package with `npm i servile` add this line
+to your script and run it:
 
     require('servile').serve()
 
-Or run the serve-script directly of the commandline:
-
-    node node_modules/servile/lib/serve.js
-
 The console should then show something like:
 
-    Serving "/home/user/mySuperApp" on "http://locahost:3000"
+    Serving "/home/user/mySuperApp" on "http://localhost:3000"
 
-Now you can drop files in the directory where you run node and they be served.
+Now you can drop files in the directory where you are and they be served.
+
+
+You can also install servile globally with `npm i servile -g`
+and the do this of the commandline in any directory:
+
+    serve
 
 
 Options
@@ -87,6 +89,11 @@ You can specify all, or some, or one of the following options:
       answerNotFound:  req => { return `Nothing found for ${req.url}` },
       answerDirectory: req => { return "No index-file in this folder." }
     })
+
+
+On the commandline you can pass 'port' and 'filesPath':
+
+    serve -p 8080 -f publik
 
 
 Example
