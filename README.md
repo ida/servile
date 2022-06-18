@@ -2,9 +2,9 @@ servile
 =======
 
 
-A quickstarter for NodeJS-based apps, automagically routing requests to files
-of same name within a given folder. Targeted at prototypers, not made for
-production.
+A lightweight quickstarter for NodeJS-based apps, automagically routing
+requests to files of same name within a given folder. For local use and
+prototyping, not ment for production.
 
 
 What
@@ -31,7 +31,7 @@ What
 - A parser for posted data: If a user fills out an HTML-form, the data is
   parsed to an object, e.g.: '{ "someFieldName": "someValue" }'.
 
-- A CORS-header-setter, so you can load and fetch like it's 1982.
+- A CORS-header-setter, so you can fetch external resources instantly.
 
 - A redirecter after form-submission, following the PRG-pattern.
 
@@ -45,7 +45,7 @@ Why
 
 - Save time by not manually typing routing-logic.
 
-- Save time by not parsing posted data.
+- Save time by not adding a middleware for parsing posted data.
 
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 

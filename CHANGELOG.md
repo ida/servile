@@ -3,6 +3,10 @@
 
 ## 1.2.4 (unreleased)
 
+* Re-add own solution for serving static files, instead of
+  using "node-static". It introduced security-issues. We
+  are now independent again (no dependencies).
+
 * Add bin-script, so servile can be executed of the commandline.
 
 
