@@ -33,8 +33,6 @@ What
 
 - A CORS-header-setter, so you can fetch external resources instantly.
 
-- A redirecter after form-submission, following the PRG-pattern.
-
 - A supporter for server-side-events (SSE).
 
 
@@ -48,8 +46,6 @@ Why
 - Save time by not adding a middleware for parsing posted data.
 
 - Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
-
-- Save time by not getting a warning message when reloading a page.
 
 - Save time by not setting up a websocket-server for talking to the client.
 

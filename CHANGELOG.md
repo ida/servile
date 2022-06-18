@@ -3,6 +3,8 @@
 
 ## 1.2.4 (unreleased)
 
+* Do not redirect after posting a form, takes ages in lynx.
+
 * Re-add own solution for serving static files, instead of
   using "node-static". It introduced security-issues. We
   are now independent again (no dependencies).
