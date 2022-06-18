@@ -10,10 +10,10 @@ prototyping, not ment for production.
 What
 ====
 
-- A static file server: Asking for 'example.org/picture.png', returns
-  'picture.png', if present in a given directory.
+a. A static file server: Asking for 'example.org/picture.png', returns
+   'picture.png', if present in a given directory.
 
-- A dynamic file server: Asking for 'example.org/about' will check for:
+b. A dynamic file server: Asking for 'example.org/about' will check for:
 
 1. A JS-file of same name: If it returns a function, execute the function
    upon the request- and response-object. If a string was returned send it
@@ -28,26 +28,30 @@ What
    from point 1.
 
 
-- A parser for posted data: If a user fills out an HTML-form, the data is
-  parsed to an object, e.g.: '{ "someFieldName": "someValue" }'.
+c. A parser for posted data: If a user fills out an HTML-form, the data is
+   parsed to an object, e.g.: '{ "someFieldName": "someValue" }'.
 
-- A CORS-header-setter, so you can fetch external resources instantly.
+d. A CORS-header-setter, so you can fetch external resources instantly.
 
-- A supporter for server-side-events (SSE).
+e. A supporter for server-side-events (SSE).
+
+f. A supporter for synchronous functions with the async/await-syntax.
 
 
 Why
 ===
 
-- Save time by not downloading a huge framework like e.g. "express" is.
+a. Save time by not downloading a huge framework like e.g. "express" is.
 
-- Save time by not manually typing routing-logic.
+b. Save time by not manually typing routing-logic.
 
-- Save time by not adding a middleware for parsing posted data.
+c. Save time by not adding a middleware for parsing posted data.
 
-- Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
+d. Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
 
-- Save time by not setting up a websocket-server for talking to the client.
+e. Save time by not setting up a websocket-server for talking to the client.
+
+f. Save time by not writing endless callback hells and get that Python feeling.
 
 If you want to save even more time during development, check out the packages
 'nodemon' and 'browser-sync'.
@@ -56,8 +60,8 @@ If you want to save even more time during development, check out the packages
 How
 ===
 
-After installing this package with `npm i servile` add this line
-to your script and run it:
+After installing this package with `npm i servile` in your package, add this
+line to your main-script and run it:
 
     require('servile').serve()
 
@@ -69,7 +73,7 @@ Now you can drop files in the directory where you are and they be served.
 
 
 You can also install servile globally with `npm i servile -g`
-and the do this of the commandline in any directory:
+and then do this of the commandline in any directory:
 
     serve
 
