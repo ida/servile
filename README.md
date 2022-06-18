@@ -128,7 +128,7 @@ your 'stream.sse'-file is expected to export a main-function and could be like:
 
 	function sendToClients(data) {
 	  for(clientId in clients) {
-		sendToClient(clients[clientId], data)
+        sendToClient(clients[clientId], data)
 	  }
 	}
 
@@ -158,7 +158,7 @@ your 'stream.sse'-file is expected to export a main-function and could be like:
 
 You can use the exported methods in other scripts like this:
 
-    const { sendToClient, sendToClients } = require('./path/to/events.sse')
+    const { sendToClient, sendToClients } = require('./path/to/stream.sse')
 
 Note that the file-extension '.sse' needs to be written, too.
 
