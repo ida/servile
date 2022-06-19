@@ -1,6 +1,9 @@
 # servile changelog
 
 
+## 1.2.5 (unreleased)
+
+
 ## 1.2.4 (2022-06-19)
 
 * Do not redirect after posting a form, takes ages in lynx.
