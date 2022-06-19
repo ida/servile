@@ -31,7 +31,7 @@ b. A dynamic file server: Asking for 'example.org/about' will check for:
 c. A parser for posted data: If a user fills out an HTML-form, the data is
    parsed to an object, e.g.: '{ "someFieldName": "someValue" }'.
 
-d. A CORS-header-setter, so you can fetch external resources instantly.
+d. A CORS-header-setter, so you can fetch external resources.
 
 e. A supporter for server-side-events (SSE).
 
@@ -119,6 +119,32 @@ static-file, simply remove the return-line and provide a 'register.html' or
 a 'register.json'-file.
 
 
+Synchronous functions are supported, using the async/await syntax.
+If you want or need that, the script would be roughly like this:
+
+    module.exports = async (request, response) => {
+
+        await yourHandler(request)
+
+    }
+
+
+The response object is passed, too, to give you full control:
+
+    module.exports = (request, response) => {
+
+        response.writeHead(400, { "Content-Type": "text/html" })
+
+        response.end("<h1>400 – Bad request</h1>"
+                   + "<p>You've been a bad, bad requester.</p>")
+
+    }
+
+
+
+Server side events
+------------------
+
 Server side events (SSE) are supported, e.g. for serving 'example.org/stream'
 your 'stream.sse'-file is expected to export a main-function and could be like:
 
@@ -167,7 +193,7 @@ You can use the exported methods in other scripts like this:
 Note that the file-extension '.sse' needs to be written, too.
 
 
-You can then handle the message on the client side in a frontend-script:
+You can then handle the message on the client-side in a frontend-script:
 
 
 	var source = new EventSource('/stream') // name of sse-file
