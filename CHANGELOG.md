@@ -3,6 +3,8 @@
 
 ## 1.2.5 (unreleased)
 
+* Add empty favicon for error-template and display
+  error-stack (traceback).
 
 ## 1.2.4 (2022-06-19)
 
