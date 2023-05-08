@@ -1,7 +1,7 @@
 # servile changelog
 
 
-## 1.2.5 (unreleased)
+## 1.2.5 (2023-05-08)
 
 * Do not error, if no content-type could be found for a file.
 
