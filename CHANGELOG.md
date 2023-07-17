@@ -1,6 +1,11 @@
 # servile changelog
 
 
+## 1.2.7 (unreleased)
+
+* 
+
+
 ## 1.2.6 (2023-07-17)
 
 * Quickfix missing cors-headers in sendStaticFile() by
