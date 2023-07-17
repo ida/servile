@@ -1,9 +1,9 @@
 # servile changelog
 
 
-## 1.2.7 (unreleased)
+## 1.2.7 (2023-07-17)
 
-* 
+* Fix unintended change of last (broken) release.
 
 
 ## 1.2.6 (2023-07-17)
