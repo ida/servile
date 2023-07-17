@@ -3,7 +3,8 @@
 
 ## 1.2.6 (unreleased)
 
-* 
+* Quickfix missing cors-headers in sendStaticFile() by
+  re-using sendAnswer().
 
 
 ## 1.2.5 (2023-05-08)
