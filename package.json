@@ -1,6 +1,6 @@
 {
   "name": "servile",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "A quickstarter for NodeJS-based apps, automagically routing requests to files of same name within a given folder. Targeted at prototypers, not made for production.",
   "main": "main.js",
   "bin": {
