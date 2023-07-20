@@ -5,6 +5,8 @@
 
 * 
 
+* Add option "staticIndexTypes".
+
 
 ## 1.2.8 (2023-07-17)
 
