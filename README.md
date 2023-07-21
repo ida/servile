@@ -87,9 +87,8 @@ You can specify all, or some, or one of the following options:
       filesPath: 'public',
       port: 2727,
       answerNotFound:  req => { return `Nothing found for ${req.url}` },
-      answerDirectory: req => { return "No index-file in this folder." },
-      answerIgnoredIndex: req => { return genHtml("This is a folder, but index files are ignored.") },
-      ignoreIndexFiles: false, // if true, answerIgnoredIndex takes effect
+      answerDirectory: req => { return `Found folder ${req.url}`},
+      ignoreIndexFiles: false,
       staticIndexTypes: ['html', 'json', 'md', 'txt']
     })
 
