@@ -3,7 +3,7 @@
 
 ## 1.2.9 (unreleased)
 
-* 
+* Set correct contentType in tryStaticAnser().
 
 * Add option "staticIndexTypes".
 
