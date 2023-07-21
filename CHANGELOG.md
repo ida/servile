@@ -3,6 +3,8 @@
 
 ## 1.2.9 (unreleased)
 
+* Fix ignoreIndexFiles overrides answerDirectory().
+
 * Set correct contentType in tryStaticAnser().
 
 * Add option "staticIndexTypes".
