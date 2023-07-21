@@ -1,7 +1,7 @@
 # servile changelog
 
 
-## 1.2.9 (unreleased)
+## 1.2.9 (2023-07-21)
 
 * Fix ignoreIndexFiles overrides answerDirectory().
 
