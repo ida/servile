@@ -3,7 +3,7 @@
 
 ## 1.3.0 (unreleased)
 
-* 
+* Fix serving static files.
 
 
 ## 1.2.9 (2023-07-21)
