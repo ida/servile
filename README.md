@@ -20,18 +20,17 @@ b. A dynamic file server: Asking for 'example.org/about' will check for:
    as the answer with content-type HTML, if an object was returned send it
    as the answer with content-type JSON, otherwise continue to next point.
 
-2. An HTML-file of same name: Answer with content-type HTML.
+2. An static (html, json, md, txt) file of same name:
+   Answer with fitting content-type.
 
-3. A JSON-file of same name: Answer with content-type JSON.
-
-4. A directory of same name: Add '/index' to the requested path and proceed
+3. A directory of same name: Add '/index' to the requested path and proceed
    from point 1.
 
 
 c. A parser for posted data: If a user fills out an HTML-form, the data is
    parsed to an object, e.g.: '{ "someFieldName": "someValue" }'.
 
-d. A CORS-header-setter, so you can fetch external resources.
+d. A CORS header setter.
 
 e. A supporter for server-side-events (SSE).
 
@@ -41,13 +40,13 @@ f. A supporter for synchronous functions with the async/await-syntax.
 Why
 ===
 
-a. Save time by not downloading a huge framework like e.g. "express" is.
+a. Save time by not downloading a huge framework.
 
-b. Save time by not manually typing routing-logic.
+b. Save time by not manually typing routing logic.
 
 c. Save time by not adding a middleware for parsing posted data.
 
-d. Save time by not fiddling with CORS-header, e.g. just for loading an avatar.
+d. Save time by not setting a CORS header, so others can load your resources.
 
 e. Save time by not setting up a websocket-server for talking to the client.
 
