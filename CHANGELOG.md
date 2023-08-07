@@ -3,7 +3,7 @@
 
 ## 1.3.1 (unreleased)
 
-* 
+* Fix error with capitalized file extensions. 
 
 
 ## 1.3.0 (2023-07-27)
