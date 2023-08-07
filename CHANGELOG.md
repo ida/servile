@@ -3,7 +3,10 @@
 
 ## 1.3.1 (unreleased)
 
-* Fix error with capitalized file extensions. 
+* Fix requested path can contain spaces and
+  is URI decoded, encode again.
+
+* Fix error with capitalized file extensions.
 
 
 ## 1.3.0 (2023-07-27)
