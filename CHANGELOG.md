@@ -1,7 +1,7 @@
 # servile changelog
 
 
-## 1.3.1 (unreleased)
+## 1.3.1 (2023-08-08)
 
 * Fix requested path can contain spaces and
   is URI decoded, encode again.
