@@ -5,6 +5,8 @@
 
 * 
 
+* Add list of files as default directory display.
+
 * Fix options.filesPath for Windows OS and cygwin.
 
 
