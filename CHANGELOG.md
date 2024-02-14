@@ -1,9 +1,7 @@
 # servile changelog
 
 
-## 1.3.2 (unreleased)
-
-* 
+## 1.3.2 (2024-02-14)
 
 * Add list of files as default directory display.
 
