@@ -5,6 +5,8 @@
 
 * 
 
+* Fix options.filesPath for Windows OS and cygwin.
+
 
 ## 1.3.1 (2023-08-08)
 
