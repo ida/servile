@@ -1,11 +1,9 @@
 # servile changelog
 
 
-## 1.3.2 (2024-02-14)
+## 1.3.2 (2024-02-15)
 
 * Add list of files as default directory display.
-
-* Fix options.filesPath for Windows OS and cygwin.
 
 
 ## 1.3.1 (2023-08-08)
