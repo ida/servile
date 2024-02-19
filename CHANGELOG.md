@@ -3,7 +3,7 @@
 
 ## 1.3.4 (unreleased)
 
-*
+* Fix error, if no options were passed to serve().
 
 
 ## 1.3.3 (2024-02-15)
