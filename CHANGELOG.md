@@ -1,9 +1,9 @@
 # servile changelog
 
 
-## 1.3.4 (unreleased)
+## 1.3.4 (2024-02-20)
 
-* Fix error, if no options were passed to serve().
+* Regard no options are passed to serve().
 
 
 ## 1.3.3 (2024-02-15)
