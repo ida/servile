@@ -8,7 +8,7 @@
     "serve": "./bin/serve.js"
   },
   "scripts": {
-    "start": "node ./lib/serve.js"
+    "start": "node ./bin/serve.js"
   },
   "author": "Ida Ebkes",
   "repository": {
