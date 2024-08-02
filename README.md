@@ -149,21 +149,21 @@ Server side events
 Server side events (SSE) are supported, e.g. for serving 'example.org/stream'
 your 'stream.sse'-file is expected to export a main-function and could be like:
 
-	let clientId = 0
-	let clients = {}
+    let clientId = 0
+    let clients = {}
 
-	function sendToClient(client, data) {
-	  client.write('id: ' + (new Date()).toLocaleTimeString() + '\n')
-	  client.write('data: ' + data + '\n\n')
-	}
+    function sendToClient(client, data) {
+      client.write('id: ' + (new Date()).toLocaleTimeString() + '\n')
+      client.write('data: ' + data + '\n\n')
+    }
 
-	function sendToClients(data) {
-	  for(clientId in clients) {
+    function sendToClients(data) {
+      for(clientId in clients) {
         sendToClient(clients[clientId], data)
-	  }
-	}
+      }
+    }
 
-	function main(req, res) {
+    function main(req, res) {
 
       (function (clientId) {
         clients[clientId] = res       // collect new client
@@ -172,18 +172,18 @@ your 'stream.sse'-file is expected to export a main-function and could be like:
         })
       })(++clientId)
 
-	  sendToClient(res, 'Welcome client, you are connected!')
+      sendToClient(res, 'Welcome client, you are connected!')
 
-	  sendToClients('We got a new member joining!')
+      sendToClients('We got a new member joining!')
 
-	}
+    }
 
 
-	module.exports = {
-	  main: main,
-	  sendToClient: sendToClient,
-	  sendToClients: sendToClients
-	}
+    module.exports = {
+      main: main,
+      sendToClient: sendToClient,
+      sendToClients: sendToClients
+    }
 
 
 
